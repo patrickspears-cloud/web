@@ -4,10 +4,48 @@
         <link type="text/css" rel="stylesheet" href="styles/styles.css" media="screen">
         <meta charset="utf-8" />
         <title>Katrina Javascript Page</title>
+        <script>
+        function showAlert() {
+        var myText = "Welcome :3";
+        alert (myText);
+        }
+        alert ('Javascipt is working');
+            function showAlert(){
+                alert ('function showAlert was called')
+                var myText="itsa workkin'";
+                alert (myText)
+            }
+            function updateTime(){
+                var now=new Date();
+                var hours=now.getHours();
+                var minutes=now.getMinutes();
+                var seconds=now.getSeconds();
+                var currentTime=hours+':'+minutes+':'+seconds;
+                var myClock=document.getElementById('clock');
+                myClock.innerHTML=currentTime;
+            }
+        </script>
     </head>
-    <body>
-        <main>
-    
+    <body onload="updateTime()">
+        <main id="main">
+            <h1>Javascript</h1>
+            <div>By Katrina Spears<br />Email:<a href="mailto:patrick.spears@cr6org">patrick.spears@cr6.org</a></div> 
+            <br />
+            <div>Web Design, taught by Andrew Reynolds<br /><a href="https://www.cr6.org/">CHS</a>, 2025-2026</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="accessibility.html">Accessibility</a></li>
+                    <li><a href="usabillity.html">Usabillity</a></li>
+                    <li><a href="graphics.html">Graphics</a></li>
+                    <li><a href="javascript.html">Javascript</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    </ul>
+            </nav>
+            <br><br>
+    <button onclick="showAlert()">Show alert</button>
+            <div id="clock"></div>
         </main>
     </body>
 </html>

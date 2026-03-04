@@ -44,8 +44,7 @@ text-align: center;
 ul {
 font-weight: bold;
 font-size: 0.9em;
- width: 400px;
-text-align: left
+text-align: left;
 }
 
 #skipnav {
@@ -65,7 +64,8 @@ div.info {
     float: left;
 }
 nav {
-    clear: left;
+    clear: all;
+    width: auto;
 }
 nav ul{
     list-style-type: none;
@@ -73,19 +73,34 @@ nav ul{
 }
 nav ul li{
     float: left;
-    margin-right: -2em;
+    margin-right: .5em;
+    margin-bottom: 1em;
+position: relative;
 }
 nav ul li a{
-    padding: 0.25em 1em;
+    padding: 0.25em .5em;
     text-decoration: none;
     background-color: #ebf5ff;
     color: #4312ae;
     border: 2px solid black;
     border-top-left-radius: 1em 1em;
     border-top-right-radius: 1em 1em;
+    
 }
 nav ul li a:hover, nav ul li a:focus {
     color: black;
     background-color: white;
     font-weight: bold;
+}
+button {
+    font-size: 1.1em;
+    background-color: #EBF5FF;
+    color: #4312AE;
+    border: 2px solid black;
+    box-shadow: 4px 4px 4px #999999;
+}
+button:focus, button:hover, button:active {
+    color: #EBF5FF;
+    background-color: #4312AE;
+    cursor: pointer;
 }

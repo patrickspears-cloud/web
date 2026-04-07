@@ -4,6 +4,50 @@
         <link type="text/css" rel="stylesheet" href="styles/styles.css" media="screen">
         <meta charset="utf-8" />
         <title>Katrina Video Page</title>
+        <style>
+            button {
+                
+            }
+        </style>
+        <script>
+        var video, speed, volume;
+            function inti(){
+                video= document.getElementById('myvideo');
+                speed= video.playbackRate;
+                volume = 0.5;
+                video.volume = volume;
+            }
+            function play() {
+                video.play();
+            }
+            function changeSpeed(direction) {
+                if (direction == 'up') {
+                    if (speed < 10) {
+                        speed = speed + 0.1;
+                    }
+                }
+                else if (direction == 'down') {
+                    if (speed > 0){
+                        speed=speed-0.1;
+                    }
+                }
+                video.playbackRate = speed;
+            }
+            function changeVolume(direction) {
+                if (direction == 'up') {
+                    if (volume < 0.9) {
+                        volume = volume + 0.1;
+                    }
+                }
+                else if (direction == 'down'){
+                    if (volume > 0.1) {
+                        volume = volume -0.1;
+                    }
+                }
+                video.volume = volume;
+            }
+            window.onload = init;
+        </script>
     </head>
     <body>
         <main id="main">
@@ -25,8 +69,16 @@
             <br>
         <h1>Web Portfolio Video</h1>
             <p>This is a required video that i must add</p>
-            <video controls poster="images/poster1.png" preload="auto" width="400"><source src="videos/unit1.webm" type="video/webm"> <track src="unit1.vtt" kind="captions" srclang="en" default> </video>
-            <video controls poster="images/michal.png" preload="auto" width="400"> <source src="videos/homesecurity.mp4" type="video/mp4"> <track src="Your%20Home%20Security%20Is%20Great%20Or%20Is%20it.en.vtt" kind="captions" srclang="en" default>  </video>
+            <video poster="images/poster1.png" preload="auto" width="400" id="myvideo1"><source src="videos/unit1.webm" type="video/webm"> <track src="unit1.vtt" kind="captions" srclang="en" default> </video>
+            <div id="myplayer">
+            <button onclick="play()">Play</button>
+            <button onclick="pause()">Pause</button>
+            <button onclick="changeSpeed('up')">Faster</button>
+            <button onclick="changeSpeed('down')">Slower</button>
+            <button onclick="changeVolume('up')">Louder</button>
+            <button onclick="changeVolume('down')">Softer</button>
+            </div>
+            <video poster="images/michal.png" preload="auto" width="400" id="myvideo2"> <source src="videos/homesecurity.mp4" type="video/mp4"> <track src="Your%20Home%20Security%20Is%20Great%20Or%20Is%20it.en.vtt" kind="captions" srclang="en" default>  </video>
         </main>
     </body>
 </html>
